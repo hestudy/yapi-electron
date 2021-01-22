@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "cross-request",
+    "description": "YApi 跨域请求",
+    "version": "3.1",
+    "permissions": [ "webRequest", "webRequestBlocking" ],
+    "background":
+    {
+      "scripts" : [
+          "background.js"
+          ]
+    },
+    "web_accessible_resources":[
+        "index.js"
+    ],
+     "content_scripts": [{
+          "matches": ["http://*/*", "https://*/*"],
+        "js": [
+            "response.js"
+        ],
+        "all_frames": true
+    }]
+}
